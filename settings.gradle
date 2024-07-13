@@ -1,0 +1,6 @@
+rootProject.name = 'clean-architecture'
+include 'entities'
+include 'application'
+include 'infrastructure'
+include 'usecase'
+
