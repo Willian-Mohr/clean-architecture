@@ -2,7 +2,9 @@ package com.wohr.entities.exception.enums;
 
 public enum ErrorCodeEnum {
 
-    ON0001("Invalid Tax Number ", "ON-0001"),
+    ON0001("Invalid Tax Number", "ON-0001"),
+    ON0002("Tax number unavailable", "ON-0002"),
+    ON0003("Email unavailable", "ON-0003"),
     TR0001("Shopkeeper does not have an active transfer function", "TR-0001"),
     TR0002("Unavailable balance", "TR-0002"),
     TRP0001("Invalid PIN", "TRP-0001");

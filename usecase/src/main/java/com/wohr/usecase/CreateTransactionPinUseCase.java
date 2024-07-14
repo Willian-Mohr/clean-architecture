@@ -2,7 +2,7 @@ package com.wohr.usecase;
 
 import com.wohr.entities.domain.TransactionPin;
 
-public interface CreateTransactoionPinUseCase {
+public interface CreateTransactionPinUseCase {
 
     void create(TransactionPin transactionPin);
 }
