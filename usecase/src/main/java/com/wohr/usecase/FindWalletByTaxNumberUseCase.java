@@ -1,8 +1,7 @@
 package com.wohr.usecase;
 
-import com.wohr.entities.domain.User;
-import com.wohr.entities.domain.Wallet;
-import com.wohr.entities.exception.NotFoundException;
+import com.wohr.core.domain.Wallet;
+import com.wohr.core.exception.NotFoundException;
 
 public interface FindWalletByTaxNumberUseCase {
 

@@ -1,9 +1,9 @@
 package com.wohr.application.usecaseimpl;
 
 import com.wohr.application.gateway.TransactionValidateGateway;
-import com.wohr.entities.domain.Transaction;
-import com.wohr.entities.exception.TransferException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.domain.Transaction;
+import com.wohr.core.exception.TransferException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 import com.wohr.usecase.TransactionValidateUseCase;
 
 public class TransactionValidateUseCaseImpl implements TransactionValidateUseCase {

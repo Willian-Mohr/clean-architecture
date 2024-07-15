@@ -1,7 +1,7 @@
 package com.wohr.application.usecaseimpl;
 
 import com.wohr.application.gateway.ConsultBalanceGateway;
-import com.wohr.entities.domain.Wallet;
+import com.wohr.core.domain.Wallet;
 import com.wohr.usecase.ConsultBalanceUseCase;
 
 import java.math.BigDecimal;

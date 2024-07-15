@@ -1,6 +1,6 @@
 package com.wohr.usecase;
 
-import com.wohr.entities.domain.Wallet;
+import com.wohr.core.domain.Wallet;
 
 import java.math.BigDecimal;
 

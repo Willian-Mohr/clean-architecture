@@ -1,7 +1,7 @@
-package com.wohr.entities.domain;
+package com.wohr.core.domain;
 
-import com.wohr.entities.exception.TaxNumberException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.exception.TaxNumberException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 
 public class TaxNumber {
     private String value;

@@ -1,10 +1,9 @@
 package com.wohr.usecase;
 
-import com.wohr.entities.domain.Transaction;
-import com.wohr.entities.exception.InternalServerErrorException;
-import com.wohr.entities.exception.NotFoundException;
-import com.wohr.entities.exception.NotificationException;
-import com.wohr.entities.exception.TransferException;
+import com.wohr.core.exception.InternalServerErrorException;
+import com.wohr.core.exception.NotFoundException;
+import com.wohr.core.exception.NotificationException;
+import com.wohr.core.exception.TransferException;
 
 import java.math.BigDecimal;
 

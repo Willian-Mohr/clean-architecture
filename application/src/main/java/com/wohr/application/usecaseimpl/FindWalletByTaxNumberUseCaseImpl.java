@@ -1,9 +1,9 @@
 package com.wohr.application.usecaseimpl;
 
 import com.wohr.application.gateway.FindWalletByTaxNumberGateway;
-import com.wohr.entities.domain.Wallet;
-import com.wohr.entities.exception.NotFoundException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.domain.Wallet;
+import com.wohr.core.exception.NotFoundException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 import com.wohr.usecase.FindWalletByTaxNumberUseCase;
 
 public class FindWalletByTaxNumberUseCaseImpl implements FindWalletByTaxNumberUseCase {

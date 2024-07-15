@@ -1,6 +1,6 @@
 package com.wohr.usecase;
 
-import com.wohr.entities.exception.AuthenticateException;
+import com.wohr.core.exception.AuthenticateException;
 
 public interface UserAuthenticateUseCase {
 

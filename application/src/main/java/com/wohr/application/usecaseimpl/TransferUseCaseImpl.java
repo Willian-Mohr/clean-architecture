@@ -1,13 +1,13 @@
 package com.wohr.application.usecaseimpl;
 
 import com.wohr.application.gateway.TransferUseCaseGateway;
-import com.wohr.entities.domain.Transaction;
-import com.wohr.entities.domain.Wallet;
-import com.wohr.entities.exception.InternalServerErrorException;
-import com.wohr.entities.exception.NotFoundException;
-import com.wohr.entities.exception.NotificationException;
-import com.wohr.entities.exception.TransferException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.domain.Transaction;
+import com.wohr.core.domain.Wallet;
+import com.wohr.core.exception.InternalServerErrorException;
+import com.wohr.core.exception.NotFoundException;
+import com.wohr.core.exception.NotificationException;
+import com.wohr.core.exception.TransferException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 import com.wohr.usecase.*;
 
 import java.math.BigDecimal;

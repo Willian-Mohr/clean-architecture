@@ -12,7 +12,7 @@ repositories {
 dependencies {
     implementation project(path: ":application")
     implementation project(path: ":usecase")
-    implementation project(path: ":entities")
+    implementation project(path: ":core")
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

@@ -1,8 +1,8 @@
-package com.wohr.entities.domain;
+package com.wohr.core.domain;
 
-import com.wohr.entities.domain.enums.UserTypeEnum;
-import com.wohr.entities.exception.TransferException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.domain.enums.UserTypeEnum;
+import com.wohr.core.exception.TransferException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

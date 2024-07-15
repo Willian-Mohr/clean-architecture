@@ -1,13 +1,13 @@
 package com.wohr.application.usecaseimpl;
 
 import com.wohr.application.gateway.CreateUserGateway;
-import com.wohr.entities.domain.TransactionPin;
-import com.wohr.entities.domain.User;
-import com.wohr.entities.domain.Wallet;
-import com.wohr.entities.exception.InternalServerErrorException;
-import com.wohr.entities.exception.TaxNumberException;
-import com.wohr.entities.exception.TransactionPinException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.domain.TransactionPin;
+import com.wohr.core.domain.User;
+import com.wohr.core.domain.Wallet;
+import com.wohr.core.exception.InternalServerErrorException;
+import com.wohr.core.exception.TaxNumberException;
+import com.wohr.core.exception.TransactionPinException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 import com.wohr.usecase.CreateUserUseCase;
 import com.wohr.usecase.EmailAvailableUseCase;
 import com.wohr.usecase.TaxNumberAvailableUseCase;

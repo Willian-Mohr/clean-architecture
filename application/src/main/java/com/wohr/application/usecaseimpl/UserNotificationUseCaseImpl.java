@@ -1,7 +1,7 @@
 package com.wohr.application.usecaseimpl;
 
 import com.wohr.application.gateway.UserNotificationGateway;
-import com.wohr.entities.domain.Transaction;
+import com.wohr.core.domain.Transaction;
 import com.wohr.usecase.UserNotificationUseCase;
 
 public class UserNotificationUseCaseImpl implements UserNotificationUseCase {

@@ -1,9 +1,9 @@
 package com.wohr.usecase;
 
-import com.wohr.entities.domain.User;
-import com.wohr.entities.exception.InternalServerErrorException;
-import com.wohr.entities.exception.TaxNumberException;
-import com.wohr.entities.exception.TransactionPinException;
+import com.wohr.core.domain.User;
+import com.wohr.core.exception.InternalServerErrorException;
+import com.wohr.core.exception.TaxNumberException;
+import com.wohr.core.exception.TransactionPinException;
 
 public interface CreateUserUseCase {
 

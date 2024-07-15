@@ -1,4 +1,4 @@
-package com.wohr.entities.domain;
+package com.wohr.core.domain;
 
 public enum TransactionStatusEnum {
 

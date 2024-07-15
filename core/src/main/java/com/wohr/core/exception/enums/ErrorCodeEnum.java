@@ -1,4 +1,4 @@
-package com.wohr.entities.exception.enums;
+package com.wohr.core.exception.enums;
 
 public enum ErrorCodeEnum {
 

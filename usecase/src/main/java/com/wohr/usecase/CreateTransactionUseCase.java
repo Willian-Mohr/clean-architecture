@@ -1,7 +1,7 @@
 package com.wohr.usecase;
 
-import com.wohr.entities.domain.Transaction;
-import com.wohr.entities.exception.TransferException;
+import com.wohr.core.domain.Transaction;
+import com.wohr.core.exception.TransferException;
 
 public interface CreateTransactionUseCase {
 

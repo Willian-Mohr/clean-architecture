@@ -1,4 +1,4 @@
-package com.wohr.entities.exception;
+package com.wohr.core.exception;
 
 public class BadRequestException extends Exception {
 

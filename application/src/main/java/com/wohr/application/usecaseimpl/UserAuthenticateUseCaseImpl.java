@@ -1,8 +1,8 @@
 package com.wohr.application.usecaseimpl;
 
 import com.wohr.application.gateway.UserAuthenticateGateway;
-import com.wohr.entities.exception.AuthenticateException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.exception.AuthenticateException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 import com.wohr.usecase.UserAuthenticateUseCase;
 
 public class UserAuthenticateUseCaseImpl implements UserAuthenticateUseCase {

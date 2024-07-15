@@ -1,4 +1,4 @@
-package com.wohr.entities.domain;
+package com.wohr.core.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

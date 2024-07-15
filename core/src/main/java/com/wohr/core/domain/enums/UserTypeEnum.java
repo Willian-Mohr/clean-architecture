@@ -1,4 +1,4 @@
-package com.wohr.entities.domain.enums;
+package com.wohr.core.domain.enums;
 
 public enum UserTypeEnum {
 

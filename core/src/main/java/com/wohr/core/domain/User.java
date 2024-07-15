@@ -1,6 +1,6 @@
-package com.wohr.entities.domain;
+package com.wohr.core.domain;
 
-import com.wohr.entities.domain.enums.UserTypeEnum;
+import com.wohr.core.domain.enums.UserTypeEnum;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

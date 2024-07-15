@@ -1,6 +1,6 @@
 package com.wohr.application.gateway;
 
-import com.wohr.entities.domain.Transaction;
+import com.wohr.core.domain.Transaction;
 
 public interface TransactionValidateGateway {
 

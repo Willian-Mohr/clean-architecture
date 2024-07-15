@@ -1,7 +1,7 @@
-package com.wohr.entities.domain;
+package com.wohr.core.domain;
 
-import com.wohr.entities.exception.TransactionPinException;
-import com.wohr.entities.exception.enums.ErrorCodeEnum;
+import com.wohr.core.exception.TransactionPinException;
+import com.wohr.core.exception.enums.ErrorCodeEnum;
 
 import java.time.LocalDateTime;
 
