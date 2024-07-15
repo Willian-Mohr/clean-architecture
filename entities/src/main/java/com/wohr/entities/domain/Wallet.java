@@ -61,6 +61,10 @@ public class Wallet {
         this.balance.subtract(value);
     }
 
+    public void receiveTransfer(BigDecimal value) {
+        this.balance.add(value);
+    }
+
     public User getUser() {
         return user;
     }
