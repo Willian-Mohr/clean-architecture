@@ -6,24 +6,28 @@ import com.wohr.core.exception.enums.ErrorCodeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Wallet {
 
     private Long id;
+    private TransactionPin transactionPin;
     private BigDecimal balance;
     private User user;
     private LocalDateTime createdAt;
     private LocalDateTime updateAt;
 
-    public Wallet(Long id, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updateAt) {
+    public Wallet(Long id, TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
+        this.transactionPin = transactionPin;
         this.balance = balance;
         this.user = user;
         this.createdAt = createdAt;
         this.updateAt = updateAt;
     }
 
-    public Wallet(BigDecimal balance, User user) {
+    public Wallet(TransactionPin transactionPin, BigDecimal balance, User user) {
+        this.transactionPin = transactionPin;
         this.balance = balance;
         this.user = user;
         this.createdAt = LocalDateTime.now();
@@ -83,5 +87,33 @@ public class Wallet {
 
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
+    }
+
+    public TransactionPin getTransactionPin() {
+        return transactionPin;
+    }
+
+    public void setTransactionPin(TransactionPin transactionPin) {
+        this.transactionPin = transactionPin;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Wallet wallet = (Wallet) o;
+        return Objects.equals(id, wallet.id) && transactionPin.equals(wallet.transactionPin) && balance.equals(wallet.balance) && user.equals(wallet.user) && createdAt.equals(wallet.createdAt) && Objects.equals(updateAt, wallet.updateAt);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(id);
+        result = 31 * result + transactionPin.hashCode();
+        result = 31 * result + balance.hashCode();
+        result = 31 * result + user.hashCode();
+        result = 31 * result + createdAt.hashCode();
+        result = 31 * result + Objects.hashCode(updateAt);
+        return result;
     }
 }

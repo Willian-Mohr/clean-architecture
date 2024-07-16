@@ -4,20 +4,19 @@ import com.wohr.core.exception.TransactionPinException;
 import com.wohr.core.exception.enums.ErrorCodeEnum;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class TransactionPin {
 
     private Long id;
-    private User user;
     private String pin;
     private Integer attempt;
     private Boolean blocked;
     private LocalDateTime createdAt;
     private LocalDateTime updateAt;
 
-    public TransactionPin(Long id, User user, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updateAt) {
+    public TransactionPin(Long id, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
-        this.user = user;
         this.pin = pin;
         this.attempt = attempt;
         this.blocked = blocked;
@@ -25,8 +24,7 @@ public class TransactionPin {
         this.updateAt = updateAt;
     }
 
-    public TransactionPin(User user, String pin) throws TransactionPinException {
-        this.user = user;
+    public TransactionPin(String pin) throws TransactionPinException {
         setPin(pin);
         this.attempt = 3;
         this.blocked = false;
@@ -42,14 +40,6 @@ public class TransactionPin {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getPin() {
@@ -71,8 +61,18 @@ public class TransactionPin {
         return attempt;
     }
 
-    public void setAttempt(Integer attempt) {
-        this.attempt = attempt;
+    public void setAttempt() {
+        if (this.attempt == 1) {
+            this.blocked = true;
+            this.attempt = 0;
+        } else {
+            this.attempt = this.attempt - 1;
+        }
+
+    }
+
+    public void restoreAttempt() {
+        this.attempt = 3;
     }
 
     public Boolean getBlocked() {
@@ -89,5 +89,25 @@ public class TransactionPin {
 
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TransactionPin that = (TransactionPin) o;
+        return Objects.equals(id, that.id) && pin.equals(that.pin) && attempt.equals(that.attempt) && blocked.equals(that.blocked) && createdAt.equals(that.createdAt) && Objects.equals(updateAt, that.updateAt);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(id);
+        result = 31 * result + pin.hashCode();
+        result = 31 * result + attempt.hashCode();
+        result = 31 * result + blocked.hashCode();
+        result = 31 * result + createdAt.hashCode();
+        result = 31 * result + Objects.hashCode(updateAt);
+        return result;
     }
 }

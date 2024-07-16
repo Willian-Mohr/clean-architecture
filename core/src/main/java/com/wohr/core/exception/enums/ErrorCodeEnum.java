@@ -13,7 +13,9 @@ public enum ErrorCodeEnum {
     TRP0001("Invalid PIN", "TRP-0001"),
     WA0001("Wallet not found", "WA-0001"),
     NO0001("Error notifying user", "NO-0001"),
-    ATH0001("Unauthenticated user", "ATH-0001")
+    ATH0001("Unauthenticated user", "ATH-0001"),
+    PIN0001("Transaction PIN is blocked", "PIN-0001"),
+    PIN0002("Invalid PIN", "PIN-0002")
     ;
 
     private String message;
