@@ -1,4 +1,4 @@
-package com.wohr.entites;
+package com.wohr.infrastructure.entites;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

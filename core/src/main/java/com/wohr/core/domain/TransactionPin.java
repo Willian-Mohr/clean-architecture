@@ -13,6 +13,7 @@ public class TransactionPin {
     private Integer attempt;
     private Boolean blocked;
     private LocalDateTime createdAt;
+
     private LocalDateTime updateAt;
 
     public TransactionPin(Long id, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updateAt) {
@@ -81,6 +82,10 @@ public class TransactionPin {
 
     public void setBlocked(Boolean blocked) {
         this.blocked = blocked;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
     public LocalDateTime getUpdateAt() {

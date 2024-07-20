@@ -1,6 +1,6 @@
-package com.wohr.repositories;
+package com.wohr.infrastructure.repositories;
 
-import com.wohr.entites.TransactionPinEntity;
+import com.wohr.infrastructure.entites.TransactionPinEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TransactionPinEntityRepository extends JpaRepository<TransactionPinEntity, Long> {

@@ -1,6 +1,6 @@
-package com.wohr.repositories;
+package com.wohr.infrastructure.repositories;
 
-import com.wohr.entites.UserEntity;
+import com.wohr.infrastructure.entites.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

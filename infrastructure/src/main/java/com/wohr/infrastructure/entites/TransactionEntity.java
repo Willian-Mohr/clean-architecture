@@ -1,4 +1,4 @@
-package com.wohr.entites;
+package com.wohr.infrastructure.entites;
 
 import com.wohr.core.domain.TransactionStatusEnum;
 import jakarta.persistence.*;
