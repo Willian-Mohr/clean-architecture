@@ -8,14 +8,14 @@ import com.wohr.usecase.FindWalletByTaxNumberUseCase;
 
 public class FindWalletByTaxNumberUseCaseImpl implements FindWalletByTaxNumberUseCase {
 
-    private FindWalletByTaxNumberGateway findWalletByTaxNumberGateway;
+    private final FindWalletByTaxNumberGateway findWalletByTaxNumberGateway;
 
     public FindWalletByTaxNumberUseCaseImpl(FindWalletByTaxNumberGateway findWalletByTaxNumberGateway) {
         this.findWalletByTaxNumberGateway = findWalletByTaxNumberGateway;
     }
 
     @Override
-    public Wallet findByTaxNumber(String taxNumber) throws NotFoundException {
+    public Wallet findByTaxNumber(String taxNumber) throws Exception {
 
         var wallet = findWalletByTaxNumberGateway.findByTaxNumber(taxNumber);
 

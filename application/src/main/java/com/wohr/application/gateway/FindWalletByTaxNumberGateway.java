@@ -4,5 +4,5 @@ import com.wohr.core.domain.Wallet;
 
 public interface FindWalletByTaxNumberGateway {
 
-    Wallet findByTaxNumber(String taxNumber);
+    Wallet findByTaxNumber(String taxNumber) throws Exception;
 }
