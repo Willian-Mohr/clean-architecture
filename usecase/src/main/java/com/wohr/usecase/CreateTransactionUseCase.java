@@ -5,5 +5,5 @@ import com.wohr.core.exception.TransferException;
 
 public interface CreateTransactionUseCase {
 
-    Transaction create(Transaction transaction) throws TransferException;
+    Transaction create(Transaction transaction) throws Exception;
 }

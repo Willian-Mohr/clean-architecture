@@ -1,21 +1,20 @@
 package com.wohr.application.usecaseimpl;
 
-import com.wohr.application.gateway.ConsultBalanceGateway;
-import com.wohr.core.domain.Wallet;
 import com.wohr.usecase.ConsultBalanceUseCase;
+import com.wohr.usecase.FindWalletByTaxNumberUseCase;
 
 import java.math.BigDecimal;
 
 public class ConsultBalanceUseCaseImpl implements ConsultBalanceUseCase {
 
-    private ConsultBalanceGateway consultBalanceGateway;
+    private final FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase;
 
-    public ConsultBalanceUseCaseImpl(ConsultBalanceGateway consultBalanceGateway) {
-        this.consultBalanceGateway = consultBalanceGateway;
+    public ConsultBalanceUseCaseImpl(FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase) {
+        this.findWalletByTaxNumberUseCase = findWalletByTaxNumberUseCase;
     }
 
     @Override
-    public BigDecimal consult(Wallet wallet) {
-        return consultBalanceGateway.consult(wallet);
+    public BigDecimal consult(String taxNumber) throws Exception {
+        return findWalletByTaxNumberUseCase.findByTaxNumber(taxNumber).getBalance();
     }
 }

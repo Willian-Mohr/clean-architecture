@@ -1,6 +1,6 @@
 package com.wohr.application.usecaseimpl;
 
-import com.wohr.application.gateway.TransferUseCaseGateway;
+import com.wohr.application.gateway.TransferGateway;
 import com.wohr.core.domain.Transaction;
 import com.wohr.core.domain.Wallet;
 import com.wohr.core.exception.*;
@@ -14,15 +14,15 @@ public class TransferUseCaseImpl implements TransferUseCase {
     private FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase;
     private TransactionValidateUseCase transactionValidateUseCase;
     private CreateTransactionUseCase createTransactionUseCase;
-    private TransferUseCaseGateway transferUseCaseGateway;
+    private TransferGateway transferGateway;
     private UserNotificationUseCase userNotificationUseCase;
     private TransactionPinValidateUseCase transactionPinValidateUseCase;
 
-    public TransferUseCaseImpl(FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase, TransactionValidateUseCase transactionValidateUseCase, CreateTransactionUseCase createTransactionUseCase, TransferUseCaseGateway transferUseCaseGateway, UserNotificationUseCase userNotificationUseCase, TransactionPinValidateUseCase transactionPinValidateUseCase) {
+    public TransferUseCaseImpl(FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase, TransactionValidateUseCase transactionValidateUseCase, CreateTransactionUseCase createTransactionUseCase, TransferGateway transferGateway, UserNotificationUseCase userNotificationUseCase, TransactionPinValidateUseCase transactionPinValidateUseCase) {
         this.findWalletByTaxNumberUseCase = findWalletByTaxNumberUseCase;
         this.transactionValidateUseCase = transactionValidateUseCase;
         this.createTransactionUseCase = createTransactionUseCase;
-        this.transferUseCaseGateway = transferUseCaseGateway;
+        this.transferGateway = transferGateway;
         this.userNotificationUseCase = userNotificationUseCase;
         this.transactionPinValidateUseCase = transactionPinValidateUseCase;
     }
@@ -42,7 +42,7 @@ public class TransferUseCaseImpl implements TransferUseCase {
 
         transactionValidateUseCase.validate(transaction);
 
-        if (!transferUseCaseGateway.transfer(transaction)) {
+        if (!transferGateway.transfer(transaction)) {
             throw new InternalServerErrorException(ErrorCodeEnum.TR0003.getMessage(), ErrorCodeEnum.TR0003.getCode());
         }
 

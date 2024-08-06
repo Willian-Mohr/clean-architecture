@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class WalletMapper {
 
-    private TransactionPinMapper transactionPinMapper;
+    private final TransactionPinMapper transactionPinMapper;
     private final UserMapper userMapper;
 
     public WalletMapper(TransactionPinMapper transactionPinMapper, UserMapper userMapper) {
@@ -39,6 +39,16 @@ public class WalletMapper {
                 userMapper.toUser(walletEntity.getUserEntity()),
                 walletEntity.getCreatedAt(),
                 walletEntity.getUpdatedAt()
+        );
+    }
+
+    public WalletEntity toWalletEntity(Wallet wallet) {
+        return new WalletEntity(
+                wallet.getBalance(),
+                userMapper.toUserEntity(wallet.getUser()),
+                transactionPinMapper.toTransactionPinEntity(wallet.getTransactionPin()),
+                wallet.getCreatedAt(),
+                wallet.getUpdateAt()
         );
     }
 }

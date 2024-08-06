@@ -4,5 +4,5 @@ import com.wohr.core.domain.Transaction;
 
 public interface CreateTransactionGateway {
 
-    Transaction create(Transaction transaction);
+    Transaction create(Transaction transaction) throws Exception;
 }
