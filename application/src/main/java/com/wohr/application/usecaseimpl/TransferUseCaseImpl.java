@@ -33,7 +33,7 @@ public class TransferUseCaseImpl implements TransferUseCase {
         Wallet from = findWalletByTaxNumberUseCase.findByTaxNumber(fromTaxNumber);
         Wallet to = findWalletByTaxNumberUseCase.findByTaxNumber(toTaxNumber);
 
-        transactionPinValidateUseCase.validate(from.getTransactionPin());
+        transactionPinValidateUseCase.validate(from.getTransactionPin(), pin);
 
         from.transfer(value);
         to.receiveTransfer(value);

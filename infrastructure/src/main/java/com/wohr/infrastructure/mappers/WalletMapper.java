@@ -51,4 +51,15 @@ public class WalletMapper {
                 wallet.getUpdateAt()
         );
     }
+
+    public WalletEntity toWalletEntityUpdate(Wallet wallet) {
+        return new WalletEntity(
+                wallet.getId(),
+                wallet.getBalance(),
+                userMapper.toUserEntity(wallet.getUser()),
+                transactionPinMapper.toTransactionPinEntityUpdate(wallet.getTransactionPin()),
+                wallet.getCreatedAt(),
+                wallet.getUpdateAt()
+        );
+    }
 }

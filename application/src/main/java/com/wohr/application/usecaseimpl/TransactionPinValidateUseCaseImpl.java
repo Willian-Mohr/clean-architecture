@@ -19,13 +19,13 @@ public class TransactionPinValidateUseCaseImpl implements TransactionPinValidate
     }
 
     @Override
-    public Boolean validate(TransactionPin transactionPin) throws PinException {
+    public Boolean validate(TransactionPin transactionPin, String pin) throws PinException {
 
         if (transactionPin.getBlocked()) {
             throw new PinException(ErrorCodeEnum.PIN0001.getMessage(), ErrorCodeEnum.PIN0001.getCode());
         }
 
-        if (!transactionPinValidateGateway.validate(transactionPin)) {
+        if (!transactionPinValidateGateway.validate(transactionPin, pin)) {
             transactionPin.setAttempt();
             updateTransactionPinUseCase.update(transactionPin);
             throw new PinException(ErrorCodeEnum.PIN0002.getMessage(), ErrorCodeEnum.PIN0002.getCode());

@@ -4,5 +4,5 @@ import com.wohr.core.domain.TransactionPin;
 
 public interface TransactionPinValidateGateway {
 
-    Boolean validate(TransactionPin transactionPin);
+    Boolean validate(TransactionPin transactionPin, String pin);
 }

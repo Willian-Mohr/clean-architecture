@@ -19,7 +19,7 @@ public class UpdateTransactionPinGatewayImpl implements UpdateTransactionPinGate
 
     @Override
     public TransactionPin update(TransactionPin transactionPin) {
-        var transactionPinEntity = transactionPinEntityRepository.save(transactionPinMapper.toTransactionPinEntity(transactionPin));
+        var transactionPinEntity = transactionPinEntityRepository.save(transactionPinMapper.toTransactionPinEntityUpdate(transactionPin));
 
         return transactionPinMapper.toTransactionPin(transactionPinEntity);
     }

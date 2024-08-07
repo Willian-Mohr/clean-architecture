@@ -12,7 +12,6 @@ public class UpdateTransactionPinUseCaseImpl implements UpdateTransactionPinUseC
         this.updateTransactionPinGateway = updateTransactionPinGateway;
     }
 
-
     @Override
     public TransactionPin update(TransactionPin transactionPin) {
         return updateTransactionPinGateway.update(transactionPin);
