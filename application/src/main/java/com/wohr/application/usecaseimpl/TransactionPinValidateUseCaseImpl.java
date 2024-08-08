@@ -1,20 +1,18 @@
 package com.wohr.application.usecaseimpl;
 
-import com.wohr.application.gateway.TransactionPinValidateGateway;
 import com.wohr.core.domain.TransactionPin;
 import com.wohr.core.exception.PinException;
 import com.wohr.core.exception.enums.ErrorCodeEnum;
 import com.wohr.usecase.TransactionPinValidateUseCase;
 import com.wohr.usecase.UpdateTransactionPinUseCase;
 
+import java.util.Objects;
+
 public class TransactionPinValidateUseCaseImpl implements TransactionPinValidateUseCase {
 
-    private TransactionPinValidateGateway transactionPinValidateGateway;
+    private final UpdateTransactionPinUseCase updateTransactionPinUseCase;
 
-    private UpdateTransactionPinUseCase updateTransactionPinUseCase;
-
-    public TransactionPinValidateUseCaseImpl(TransactionPinValidateGateway transactionPinValidateGateway, UpdateTransactionPinUseCase updateTransactionPinUseCase) {
-        this.transactionPinValidateGateway = transactionPinValidateGateway;
+    public TransactionPinValidateUseCaseImpl(UpdateTransactionPinUseCase updateTransactionPinUseCase) {
         this.updateTransactionPinUseCase = updateTransactionPinUseCase;
     }
 
@@ -25,13 +23,13 @@ public class TransactionPinValidateUseCaseImpl implements TransactionPinValidate
             throw new PinException(ErrorCodeEnum.PIN0001.getMessage(), ErrorCodeEnum.PIN0001.getCode());
         }
 
-        if (!transactionPinValidateGateway.validate(transactionPin, pin)) {
+        if (!Objects.equals(transactionPin.getPin(), pin)) {
             transactionPin.setAttempt();
             updateTransactionPinUseCase.update(transactionPin);
             throw new PinException(ErrorCodeEnum.PIN0002.getMessage(), ErrorCodeEnum.PIN0002.getCode());
         }
 
-        if (transactionPin.getAttempt() > 3) {
+        if (transactionPin.getAttempt() < 3) {
             transactionPin.restoreAttempt();
             updateTransactionPinUseCase.update(transactionPin);
         }
