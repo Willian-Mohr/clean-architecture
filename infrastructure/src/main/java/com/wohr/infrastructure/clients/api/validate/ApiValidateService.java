@@ -1,6 +1,6 @@
-package com.wohr.infrastructure.clients;
+package com.wohr.infrastructure.clients.api.validate;
 
-import com.wohr.infrastructure.clients.dto.responses.ApiValidateResponse;
+import com.wohr.infrastructure.clients.api.validate.responses.ApiValidateResponse;
 import org.springframework.stereotype.Service;
 
 @Service

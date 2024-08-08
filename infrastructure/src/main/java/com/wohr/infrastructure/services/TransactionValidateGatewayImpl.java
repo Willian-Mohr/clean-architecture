@@ -2,7 +2,7 @@ package com.wohr.infrastructure.services;
 
 import com.wohr.application.gateway.TransactionValidateGateway;
 import com.wohr.core.domain.Transaction;
-import com.wohr.infrastructure.clients.ApiValidateService;
+import com.wohr.infrastructure.clients.api.validate.ApiValidateService;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -6,7 +6,7 @@ import com.wohr.usecase.UserNotificationUseCase;
 
 public class UserNotificationUseCaseImpl implements UserNotificationUseCase {
 
-    private UserNotificationGateway userNotificationGateway;
+    private final UserNotificationGateway userNotificationGateway;
 
     public UserNotificationUseCaseImpl(UserNotificationGateway userNotificationGateway) {
         this.userNotificationGateway = userNotificationGateway;

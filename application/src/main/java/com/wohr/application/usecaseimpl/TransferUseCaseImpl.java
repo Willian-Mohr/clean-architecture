@@ -11,12 +11,12 @@ import java.math.BigDecimal;
 
 public class TransferUseCaseImpl implements TransferUseCase {
 
-    private FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase;
-    private TransactionValidateUseCase transactionValidateUseCase;
-    private CreateTransactionUseCase createTransactionUseCase;
-    private TransferGateway transferGateway;
-    private UserNotificationUseCase userNotificationUseCase;
-    private TransactionPinValidateUseCase transactionPinValidateUseCase;
+    private final FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase;
+    private final TransactionValidateUseCase transactionValidateUseCase;
+    private final CreateTransactionUseCase createTransactionUseCase;
+    private final TransferGateway transferGateway;
+    private final UserNotificationUseCase userNotificationUseCase;
+    private final TransactionPinValidateUseCase transactionPinValidateUseCase;
 
     public TransferUseCaseImpl(FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase, TransactionValidateUseCase transactionValidateUseCase, CreateTransactionUseCase createTransactionUseCase, TransferGateway transferGateway, UserNotificationUseCase userNotificationUseCase, TransactionPinValidateUseCase transactionPinValidateUseCase) {
         this.findWalletByTaxNumberUseCase = findWalletByTaxNumberUseCase;

@@ -21,4 +21,7 @@ security:
 
 
 client:
-  url: https://run.mocky.io/v3/f0b32c58-c81f-4aa4-9d33-47777691eff4
+  api:
+    url: https://run.mocky.io/v3/f0b32c58-c81f-4aa4-9d33-47777691eff4
+  user:
+    url: https://run.mocky.io/v3/ebafceb4-1337-43dc-a7ee-066c9e77aefb
