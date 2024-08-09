@@ -1,10 +1,10 @@
 package com.wohr.usecase;
 
-import com.wohr.core.exception.*;
+import com.wohr.core.domain.Transaction;
 
 import java.math.BigDecimal;
 
 public interface TransferUseCase {
 
-    Boolean transfer(String fromTaxNumber, String toTaxNumber, BigDecimal value, String pin) throws Exception;
+    Boolean transfer(Transaction transaction) throws Exception;
 }

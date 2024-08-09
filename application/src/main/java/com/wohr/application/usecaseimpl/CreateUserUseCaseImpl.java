@@ -9,33 +9,19 @@ import com.wohr.core.exception.TaxNumberException;
 import com.wohr.core.exception.TransactionPinException;
 import com.wohr.core.exception.enums.ErrorCodeEnum;
 import com.wohr.usecase.CreateUserUseCase;
-import com.wohr.usecase.EmailAvailableUseCase;
-import com.wohr.usecase.TaxNumberAvailableUseCase;
 
 import java.math.BigDecimal;
 
 public class CreateUserUseCaseImpl implements CreateUserUseCase {
 
-    private TaxNumberAvailableUseCase taxNumberAvailableUseCase;
-    private EmailAvailableUseCase emailAvailableUseCase;
-    private CreateUserGateway createUserGateway;
+    private final CreateUserGateway createUserGateway;
 
-    public CreateUserUseCaseImpl(TaxNumberAvailableUseCase taxNumberAvailableUseCase, EmailAvailableUseCase emailAvailableUseCase, CreateUserGateway createUserGateway) {
-        this.taxNumberAvailableUseCase = taxNumberAvailableUseCase;
-        this.emailAvailableUseCase = emailAvailableUseCase;
+    public CreateUserUseCaseImpl(CreateUserGateway createUserGateway) {
         this.createUserGateway = createUserGateway;
     }
 
     @Override
     public void create(User user, String pin) throws TaxNumberException, TransactionPinException, InternalServerErrorException {
-
-        if (!taxNumberAvailableUseCase.taxNumberAvailable(user.getTaxNumber().getValue())) {
-            throw new TaxNumberException(ErrorCodeEnum.ON0002.getMessage(), ErrorCodeEnum.ON0002.getCode());
-        }
-
-        if (!emailAvailableUseCase.emailAvailable(user.getEmail())) {
-            throw new TaxNumberException(ErrorCodeEnum.ON0003.getMessage(), ErrorCodeEnum.ON0003.getCode());
-        }
 
         if (!createUserGateway.create(user, new Wallet(new TransactionPin(pin), BigDecimal.ZERO, user))) {
             throw new InternalServerErrorException(ErrorCodeEnum.ON0004.getMessage(), ErrorCodeEnum.ON0004.getCode());
